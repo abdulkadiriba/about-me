@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts",'nuxt-headlessui'],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts",'nuxt-headlessui','nuxt-icon'],
   devtools: { enabled: true },
   components: ["~/components", "~/components/layout", "~/components/modals"],
   tailwindcss: {

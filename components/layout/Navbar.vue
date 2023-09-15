@@ -1,20 +1,129 @@
+<script setup lang="ts">
+const route = useRoute();
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/vue";
+
+const isOpen = ref(false);
+
+function closeModal() {
+  isOpen.value = false;
+}
+function openModal() {
+  isOpen.value = true;
+}
+const verificationClass: any = ref();
+const verificationAnswer: any = ref("Download");
+const verificationCode: any = ref();
+const downloadCV = () => {
+  verificationAnswer.value = "Please wait...";
+  setTimeout(() => {
+    if (verificationCode.value === "111111") {
+      verificationClass.value = "bg-emerald-600";
+      verificationAnswer.value = "Verification Successful";
+      var dosyaURL = "/abdulkadiribaCV.pdf";
+      var indirLink = document.createElement("a");
+      indirLink.href = dosyaURL;
+      indirLink.download = "abdulkadiribaCV.pdf";
+      indirLink.click();
+    } else {
+      verificationAnswer.value = "Verification failed";
+      verificationCode.value = "";
+      verificationClass.value = "wrong-animate";
+    }
+    setTimeout(() => {
+      verificationClass.value = "";
+      verificationAnswer.value = "Download";
+    }, 1000);
+  }, 1000);
+};
+const navigation = ref([
+  {
+    name: "About Me",
+    path: "/",
+    icon: "ic:baseline-home",
+  },
+  {
+    name: "My Works",
+    path: "/works",
+    icon: "material-symbols:workspace-premium",
+  },
+  {
+    name: "Technologies",
+    path: "/technologies",
+    icon: "ph:code-bold",
+  },
+]);
+const isActive = ref(false);
+
+watch(
+  () => route.path,
+  () => (isActive.value = false)
+);
+</script>
 <template>
-  <div
-    class="w-72 h-screen fixed backdrop-blur-sm bg-gradient-to-r from-zinc-950/50 to-zinc-950/50"
-  >
-    <div class="p-10 h-full flex flex-col justify-between content-between">
-      <div class="text-center font-bold text-2xl">
-        <img class="logo" src="/assets/img/logo.png" alt="" />
+  <div>
+    <!-- Mobile -->
+    <div
+      class="block md:hidden backdrop-blur-sm bg-zinc-950/50 h-16 fixed z-50 w-full"
+    >
+      <div class="flex justify-between items-center w-full h-full px-5 py-2.5">
+        <div>Waynee.dev</div>
+        <div>
+          <Icon
+            v-if="!isActive"
+            @click="isActive = !isActive"
+            name="radix-icons:hamburger-menu"
+            color="white"
+            size="32px"
+          />
+          <Icon
+            v-if="isActive"
+            @click="isActive = !isActive"
+            name="material-symbols:close-rounded"
+            color="white"
+            size="32px"
+          />
+        </div>
       </div>
-      <div class="menu">
-        <NuxtLink :class="route.path === '/' ? 'active' : ''" to="/">About Me</NuxtLink>
-        <NuxtLink :class="route.path === '/works' ? 'active' : ''" to="/works">My Works</NuxtLink>
-        <NuxtLink :class="route.path === '/technologies' ? 'active' : ''" to="/technologies">Technologies</NuxtLink>
-      </div>
-      <div class="cv cursor-pointer text-center" @click="isOpen = true">CV</div>
     </div>
+    <div
+      :class="isActive ? 'block' : 'hidden'"
+      class="w-full md:block md:w-72 z-30 h-screen fixed backdrop-blur-sm bg-gradient-to-r from-zinc-950/50 to-zinc-950/50"
+    >
+      <div class="p-10 h-full flex flex-col justify-between content-between">
+        <div class="text-center font-bold text-2xl">
+          <img class="logo" src="/assets/img/logo.png" alt="" />
+        </div>
+        <div class="menu">
+          <NuxtLink
+            v-for="nav in navigation"
+            :key="nav.path"
+            :class="route.path === nav.path ? 'active' : ''"
+            :to="nav.path"
+            >
+            <Icon
+            :name="nav.icon"
+            color="gray"
+            size="24px"
+            class="mr-1"
+          />
+            {{ nav.name }}</NuxtLink
+          >
+        </div>
+        <div class="cv cursor-pointer text-center" @click="isOpen = true">
+          CV
+        </div>
+      </div>
+    </div>
+
+    <!-- CV MODAL -->
     <TransitionRoot appear :show="isOpen" as="template">
-      <Dialog as="div" @close="closeModal" class="relative z-10">
+      <Dialog as="div" @close="closeModal" class="relative z-[99]">
         <TransitionChild
           as="template"
           enter="duration-300 ease-out"
@@ -81,99 +190,66 @@
     </TransitionRoot>
   </div>
 </template>
-<script setup lang="ts">
-const route = useRoute()
-import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/vue";
 
-const isOpen = ref(false);
-
-function closeModal() {
-  isOpen.value = false;
-}
-function openModal() {
-  isOpen.value = true;
-}
-const verificationClass: any = ref();
-const verificationAnswer: any = ref("Download");
-const verificationCode: any = ref();
-const downloadCV = () => {
-  verificationAnswer.value = "Please wait...";
-  setTimeout(() => {
-    if (verificationCode.value === "111111") {
-      verificationClass.value = "bg-emerald-600";
-      verificationAnswer.value = "Verification Successful";
-      var dosyaURL = "/abdulkadiribaCV.pdf";
-      var indirLink = document.createElement("a");
-      indirLink.href = dosyaURL;
-      indirLink.download = "abdulkadiribaCV.pdf";
-      indirLink.click();
-    } else {
-      verificationAnswer.value = "Verification failed";
-      verificationCode.value = "";
-      verificationClass.value = "wrong-animate";
-    }
-    setTimeout(() => {
-      verificationClass.value = "";
-      verificationAnswer.value = "Download";
-    }, 1000);
-  }, 1000);
-};
-
-</script>
 <style>
 .menu a {
-  @apply  duration-200 block text-lg font-semibold text-center px-5 py-2 my-2 border-l-2 border-r-2 border-transparent;
+  @apply duration-200 flex justify-center items-center text-lg font-semibold text-center px-5 py-2 my-2 border-l-2 border-r-2 border-transparent ;
 }
+
 .menu a:hover {
   @apply border-white;
   animation: pulse 3s infinite;
 }
+
 .menu .active {
   @apply border-white;
   animation: pulse 3s infinite;
 }
+
 .logo {
   filter: drop-shadow(2px 4px 16px #fff);
   animation: shining 2s infinite;
 }
 
-.cv{
+.cv {
   @apply hover:bg-zinc-100/20 px-5 py-2;
-  animation: shining 2s infinite
+  animation: shining 2s infinite;
 }
+
 @keyframes pulse {
   0% {
     @apply bg-white/10;
   }
+
   50% {
     @apply bg-white/20;
     filter: drop-shadow(0px 0px 40px #fff);
     text-shadow: #fff 0 0 20px;
     color: #fff;
   }
+
   100% {
     @apply bg-white/10;
   }
 }
+
 @keyframes shining {
   0% {
     filter: drop-shadow(0px 0px 0px #fff);
   }
+
   45% {
     filter: drop-shadow(0px 0px 15px #fff);
   }
+
   50% {
     filter: drop-shadow(0px 0px 0px #fff);
   }
+
   55% {
     filter: drop-shadow(0px 0px 15px #fff);
   }
+
   100% {
     filter: drop-shadow(0px 0px 0px #fff);
   }
@@ -189,8 +265,10 @@ const downloadCV = () => {
   100% {
     transform: translateX(-10px);
   }
+
   50% {
-    transform: translateX(10px); /* Sağa kaydır */
+    transform: translateX(10px);
+    /* Sağa kaydır */
   }
 }
 </style>

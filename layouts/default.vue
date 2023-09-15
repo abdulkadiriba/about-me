@@ -1,7 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <div class="ml-64 p-40">
+    <!-- <test /> -->
+    <div class="md:ml-64 p-12 pt-20 md:px-40 md:pt-40">
       <slot />
     </div>
   </div>
