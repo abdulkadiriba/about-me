@@ -32,6 +32,6 @@ const technologies = ref([
 }
 
 .technologies:hover {
-  @apply scale-105 bg-zinc-700 border-zinc-400;
+  @apply scale-105 border-zinc-400;
 }
 </style>

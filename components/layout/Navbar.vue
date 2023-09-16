@@ -72,7 +72,10 @@ watch(
       class="block md:hidden backdrop-blur-sm bg-zinc-950/50 h-16 fixed z-50 w-full"
     >
       <div class="flex justify-between items-center w-full h-full px-5 py-2.5">
-        <div>Waynee.dev</div>
+        <div class="font-semibold flex items-center">
+          <img class="w-20" src="/assets/img/logo.png" alt="" />
+
+          Wayne</div>
         <div>
           <Icon
             v-if="!isActive"
@@ -96,8 +99,9 @@ watch(
       class="w-full md:block md:w-72 z-30 h-screen fixed backdrop-blur-sm bg-gradient-to-r from-zinc-950/50 to-zinc-950/50"
     >
       <div class="p-10 h-full flex flex-col justify-between content-between">
-        <div class="text-center font-bold text-2xl">
+        <div class="text-center font-semibold text-xl">
           <img class="logo" src="/assets/img/logo.png" alt="" />
+          Wayne
         </div>
         <div class="menu">
           <NuxtLink
