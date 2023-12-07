@@ -69,10 +69,10 @@ const store = useGlobalStore();
 body {
   background:
         /* top, transparent black, faked with gradient */ linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
     ),
-    /* bottom, image */ url("/assets/img/bg.jpeg");
+    /* bottom, image */ url("/assets/img/bg.webp");
 
   background-size: cover;
   @apply bg-zinc-800 text-zinc-200;

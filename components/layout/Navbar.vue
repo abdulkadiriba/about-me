@@ -94,12 +94,7 @@ watch(
         </div>
 
         <div>
-          <div
-            class="cv cursor-pointer text-center"
-            @click="store.switchCvModal"
-          >
-            CV
-          </div>
+
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 <script setup>
+import { useGlobalStore } from "~/stores/globalStore";
+const store = useGlobalStore();
 const profiles = ref([
   {
     name: "Github",
@@ -25,12 +27,24 @@ const profiles = ref([
     description: "/abdulkadiriba",
   },
 ]);
+const navigation = ref([
+  {
+    name: "My Works",
+    path: "/works",
+    icon: "material-symbols:workspace-premium",
+  },
+  {
+    name: "Technologies",
+    path: "/technologies",
+    icon: "ph:code-bold",
+  },
+]);
 </script>
 <template>
   <div class="md:mt-20 mt-5">
     <Head>
       <Title>Home - Wayne</Title>
-      <Meta name="description" content="Abdulkadir iba private blog"/>
+      <Meta name="description" content="Abdulkadir iba private blog" />
     </Head>
     <div
       class="animate-text text-4xl md:text-6xl text-white font-extrabold text-center"
@@ -45,29 +59,46 @@ const profiles = ref([
     </div>
 
     <div>
-      <div class="mt-10 sm:p-5 grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+      <div class="mt-10 grid sm:grid-cols-2 gap-5">
         <NuxtLink
-          :to="profile.url"
-          target="_blank"
-          v-for="profile in profiles"
-          :key="profile.name"
-          class="profiles group relative"
+          :to="link.path"
+          v-for="link in navigation"
+          :key="link.name"
+          class="profiles group relative w-full"
         >
           <div
-            class="w-full bg-red-600 absolute group-hover:h-32 h-0 duration-700 bottom-0 transition-all"
+            class="w-full bg-red-600 group-hover:h-full absolute -z-10 h-0 duration-700 bottom-0 transition-all"
           ></div>
           <div class="px-5 py-3.5 flex justify-between items-center">
-            <Icon
-              :name="profile.icon"
-              class="h-12 group-hover:translate-x-3 duration-500"
-              size="34px"
-            />
-            <div class="text-xl group-hover:-translate-x-9 duration-500">
-              {{ profile.name }}
+            <Icon :name="link.icon" class="h-12" size="34px" />
+            <div class="text-xl">
+              {{ link.name }}
             </div>
           </div>
         </NuxtLink>
       </div>
+    </div>
+    <div
+      class="cv cursor-pointer text-center bg-gray-700 rounded-lg mt-5"
+      @click="store.switchCvModal"
+    >
+      Download Resume (CV)
+    </div>
+    <div class="grid sm:grid-cols-4 gap-5 mt-5">
+      <NuxtLink
+        :to="link.url"
+        target="_blank"
+        v-for="link in profiles"
+        :key="link.index"
+        class="profiles group relative p-1 text-center"
+      >
+        <div
+          class="w-full bg-red-600 group-hover:h-full absolute -z-10 h-0 duration-700 bottom-0 transition-all"
+        ></div>
+        <Icon :name="link.icon" class="h-12" size="34px" />
+
+        {{ link.name }}
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -94,9 +125,5 @@ const profiles = ref([
 
 .profiles {
   @apply duration-200 bg-zinc-900 rounded-lg border-2 border-zinc-200/80 overflow-hidden transition-all backdrop-blur-md;
-}
-
-.profiles:hover {
-  @apply scale-105 border-zinc-400;
 }
 </style>
