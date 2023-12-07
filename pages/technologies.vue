@@ -14,6 +14,10 @@ const technologies = ref([
 </script>
 <template>
   <div>
+    <Head>
+      <Title>Technologies - Wayne</Title>
+      <Meta name="description" content="Abdulkadir iba private blog"/>
+    </Head>
     <div class="text-4xl font-semibold">Technologies I Use</div>
     <div class="grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 mt-12">
       <div v-for="tech in technologies" :key="tech.name" class="technologies group relative">

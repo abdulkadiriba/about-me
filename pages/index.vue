@@ -27,7 +27,11 @@ const profiles = ref([
 ]);
 </script>
 <template>
-  <div>
+  <div class="md:mt-20 mt-5">
+    <Head>
+      <Title>Home - Wayne</Title>
+      <Meta name="description" content="Abdulkadir iba private blog"/>
+    </Head>
     <div
       class="animate-text text-4xl md:text-6xl text-white font-extrabold text-center"
     >
