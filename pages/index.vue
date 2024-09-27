@@ -22,6 +22,12 @@ import {
 
 const profiles = ref([
   {
+    name: "+90 541 201 90 97",
+    url: "https://wa.me/905412019097",
+    icon: "bi:whatsapp",
+    description: "/abdulkadiriba",
+  },
+  {
     name: "Github",
     url: "https://github.com/abdulkadiriba",
     icon: "radix-icons:github-logo",
@@ -49,6 +55,7 @@ const profiles = ref([
 const technologies = ref([
   { name: "Javascript", img: "/assets/img/technologies/javascript.svg" },
   { name: "Typescript", img: "/assets/img/technologies/typescript.svg" },
+  { name: "Php", img: "/assets/img/technologies/php.svg" },
   { name: "Vue Js", img: "/assets/img/technologies/vuejs.svg" },
   { name: "Nuxt Js", img: "/assets/img/technologies/nuxtjs.svg" },
   { name: "React Js", img: "/assets/img/technologies/reactjs.svg" },
@@ -58,6 +65,7 @@ const technologies = ref([
   { name: "Tailwind", img: "/assets/img/technologies/tailwind.svg" },
   { name: "Sass", img: "/assets/img/technologies/sass.svg" },
   { name: "Mongodb", img: "/assets/img/technologies/mongodb.svg" },
+  { name: "Node", img: "/assets/img/technologies/node.png" },
 ]);
 const works = ref([
   {
@@ -169,6 +177,7 @@ const works = ref([
   },
 ]);
 </script>
+
 <template>
   <title>Abdulkadir Iba</title>
   <body class="dark">
@@ -180,15 +189,16 @@ const works = ref([
             <Icon name="logos:google-developers" /> Web Developer
           </h2>
           <h3 class="text-2xl mt-4">
-            Hello, I'm Abdulkadir, I'm 27 years old.
+            Hello, I am Abdulkadir, a web software developer and also an
+            electrical and electronic engineer.
           </h3>
           <p class="mt-4">
-            I've listed some of the work I've done and the technologies I've
-            used.
+            I have listed some of the work I have done and the technologies I
+            use. If you want to work with me, you can contact me.
           </p>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <Button class="mt-4" variant="outline"> Contact Me</Button>
+              <Button class="mt-4">Contact Me</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <NuxtLink
@@ -209,6 +219,7 @@ const works = ref([
           <img class="logo" src="/assets/img/logo.png" alt="" />
         </div>
       </section>
+
       <!-- Technologies -->
       <section class="mt-12">
         <div class="text-2xl font-semibold">
@@ -232,6 +243,7 @@ const works = ref([
           </Button>
         </div>
       </section>
+
       <!-- Works -->
       <section class="mt-12">
         <div class="text-2xl font-semibold flex items-center">
