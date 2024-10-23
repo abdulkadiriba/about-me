@@ -5,7 +5,7 @@ onMounted(() => {
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: "Birisi siteye girdi" }),
+      body: JSON.stringify({ content: "Bildirim!" }),
     }
   );
 });
@@ -85,7 +85,7 @@ const works = ref([
   {
     url: "gamemarket24.com",
     description: "Account trading store for league of legends",
-    image: "/assets/img/works/gamemarket24.webp",
+    image: "/assets/img/works/gamemarket24-v2.png",
     icons: [
       "/assets/img/technologies/javascript.svg",
       "/assets/img/technologies/vuejs.svg",
@@ -173,6 +173,27 @@ const works = ref([
       "/assets/img/technologies/javascript.svg",
       "/assets/img/technologies/vuejs.svg",
       "/assets/img/technologies/bootstrap.png",
+    ],
+  },
+  {
+    url: "bmwtrabzonmekanik.com",
+    description:
+      "A business offering professional mechanical repair services for BMW and MINI vehicles in Trabzon.",
+    image: "/assets/img/works/mpowermekanik.png",
+    icons: [
+      "/assets/img/technologies/javascript.svg",
+      "/assets/img/technologies/nuxtjs.svg",
+      "/assets/img/technologies/tailwind.svg",
+    ],
+  },
+  {
+    url: "deryapi.com",
+    description: "A company serving in the construction industry",
+    image: "/assets/img/works/deryapi.png",
+    icons: [
+      "/assets/img/technologies/javascript.svg",
+      "/assets/img/technologies/nuxtjs.svg",
+      "/assets/img/technologies/tailwind.svg",
     ],
   },
 ]);
