@@ -1,48 +1,67 @@
 export interface Technology {
-    name: string;
-    icon: string;
-    color: string;
-  }
-  
-  export const technologies: Technology[] = [
-    {
-      name: 'JavaScript',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      color: 'bg-yellow-400'
-    },
-    {
-      name: 'TypeScript',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      color: 'bg-blue-500'
-    },
-    {
-      name: 'Vue.js',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-      color: 'bg-green-500'
-    },
-    {
-      name: 'Next.js',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-      color: 'bg-black'
-    },
-    {
-      name: 'React',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      color: 'bg-blue-400'
-    },
-    {
-      name: 'Node.js',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-      color: 'bg-green-600'
-    },
-    {
-      name: 'Tailwind',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
-      color: 'bg-cyan-400'
-    },
-    {
-      name: 'MongoDB',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      color: 'bg-green-500'
-    }
-  ];
+  name: string
+  icon: string
+}
+
+export const technologies: Technology[] = [
+  {
+    name: "JavaScript",
+    icon: "/img/technologies/javascript.svg",
+  },
+  {
+    name: "TypeScript",
+    icon: "/img/technologies/typescript.svg",
+  },
+  {
+    name: "Vue.js",
+    icon: "/img/technologies/vuejs.svg",
+  },
+  {
+    name: "Nuxt.js",
+    icon: "/img/technologies/nuxtjs.svg",
+  },
+  {
+    name: "React",
+    icon: "/img/technologies/reactjs.svg",
+  },
+  {
+    name: "Next.js",
+    icon: "/img/technologies/next.svg",
+  },
+  {
+    name: "Angular.js",
+    icon: "/img/technologies/angular.svg",
+  },
+  {
+    name: "PHP",
+    icon: "/img/technologies/php.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "/img/technologies/node.png",
+  },
+  {
+    name: "Bootstrap",
+    icon: "/img/technologies/bootstrap.png",
+  },
+  {
+    name: "Tailwind",
+    icon: "/img/technologies/tailwind.svg",
+  },
+  {
+    name: "SASS",
+    icon: "/img/technologies/sass.svg",
+  },
+  {
+    name: "MongoDB",
+    icon: "/img/technologies/mongodb.svg",
+  },
+  {
+    name: "Docker",
+    icon: "/img/technologies/docker.svg",
+  },
+  {
+    name: "Bun",
+    icon: "/img/technologies/bun.svg",
+  },
+]

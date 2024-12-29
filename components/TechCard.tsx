@@ -1,12 +1,21 @@
-"use client";
+"use client"
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import type { Technology } from '@/data/technologies';
+import React from "react"
+import type { Technology } from "@/data/technologies"
+import { motion } from "framer-motion"
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card"
 
 interface TechCardProps {
-  tech: Technology;
-  index: number;
+  tech: Technology
+  index: number
 }
 
 export const TechCard = ({ tech, index }: TechCardProps) => {
@@ -14,22 +23,11 @@ export const TechCard = ({ tech, index }: TechCardProps) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ scale: 1.05 }}
-      className="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+      transition={{ delay: index * 0.2 }}
+      className="rounded overflow-hidden flex items-center  bg-zinc-800 shadow-lg gap-2 p-1 border border-zinc-600 cursor-pointer"
     >
-      <motion.div 
-        className="w-12 h-12 rounded-lg mr-4 overflow-hidden"
-        whileHover={{ rotate: 360 }}
-        transition={{ duration: 1 }}
-      >
-        <img 
-          src={tech.icon} 
-          alt={tech.name}
-          className="w-full h-full object-contain"
-        />
-      </motion.div>
-      <span className="font-medium">{tech.name}</span>
+      <img src={tech.icon} alt={tech.name} className="size-4" />
+      <span className="text-xs">{tech.name}</span>
     </motion.div>
-  );
-};
+  )
+}
