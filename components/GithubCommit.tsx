@@ -1,9 +1,7 @@
-import Link from "next/link"
-import { Glow } from "@codaworks/react-glow"
-import { motion } from "framer-motion"
-import GitHubCalendar from "react-github-calendar"
+import Link from 'next/link';
+import { Glow } from '@codaworks/react-glow';
+import GitHubCalendar from 'react-github-calendar';
 
-import { Icons } from "./Icons"
 import {
   Card,
   CardContent,
@@ -11,43 +9,49 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card"
+} from './ui/card';
+import { Github } from 'lucide-react';
 
 export function GithubCommit() {
-  const selectLastHalfYear = (contributions) => {
-    const currentYear = new Date().getFullYear()
-    const currentMonth = new Date().getMonth()
-    const shownMonths = 6
+  const selectLastHalfYear = (contributions: any) => {
+    const currentYear = 2024;
+    const currentMonth = 15;
+    const shownMonths = 8;
 
-    return contributions.filter((activity) => {
-      const date = new Date(activity.date)
-      const monthOfDay = date.getMonth()
+    return contributions.filter((activity: any) => {
+      const date = new Date(activity.date);
+      const monthOfDay = date.getMonth();
 
       return (
         date.getFullYear() === currentYear &&
         monthOfDay > currentMonth - shownMonths &&
         monthOfDay <= currentMonth
-      )
-    })
-  }
+      );
+    });
+  };
   return (
-    <Card className="h-full glow:border-primary glow:bg-primary/10 overflow-hidden">
-      <CardHeader>
-        <CardTitle className="flex gap-2 items-center">
-          <Icons.gitHub className="size-8" /> Github Profile
-        </CardTitle>
-        <CardDescription>
-          <Link target="_blank" href="https://github.com/abdulkadiriba">
-            Click to view my github profile
-          </Link>
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <GitHubCalendar
-          username="abdulkadiriba"
-          transformData={selectLastHalfYear}
-        />
-      </CardContent>
-    </Card>
-  )
+    <Glow>
+      <Card className='h-full glow:border-primary'>
+        <CardHeader>
+          <CardTitle className='flex items-center gap-2'>
+            <Github className='size-8 glow:text-primary' />
+            <div className='bg-gradient-to-r from-emerald-500 via-sky-400 to-primary bg-clip-text glow:text-transparent'>
+              Github Profile
+            </div>
+          </CardTitle>
+          <CardDescription>
+            <Link target='_blank' href='https://github.com/abdulkadiriba'>
+              Click to view my github profile
+            </Link>
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='max-sm:max-w-xs'>
+          <GitHubCalendar
+            username='abdulkadiriba'
+            transformData={selectLastHalfYear}
+          />
+        </CardContent>
+      </Card>
+    </Glow>
+  );
 }

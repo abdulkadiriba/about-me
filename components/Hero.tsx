@@ -1,66 +1,80 @@
-"use client"
+'use client';
 
-import React from "react"
-import { Glow, GlowCapture } from "@codaworks/react-glow"
-import { motion } from "framer-motion"
-
-import { Button } from "@/components/ui/button"
-
-import { ProfileButton } from "./Buttons/ProfileButton"
+import React from 'react';
+import { motion } from 'framer-motion';
+import { SocialButtons } from './Buttons/SocialButtons';
+import { ProfileImage } from './ProfileImage';
 
 export default function Hero() {
+  // useEffect(() => {
+  //     fetch(
+  //       "https://discord.com/api/webhooks/1171087359975096473/-7_yM5526PopCdWD6uk-Wv7StP39NaoYDyzKLDnr_xkJq6kaSHT99ijmf69fPLhZ5gy6",
+  //       {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({ content: "Bildirim!" }),
+  //       }
+  //     );
+
+  // }, [])
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="py-20"
+      className='px-4 py-12 sm:px-6 md:py-20 lg:px-8'
     >
-      <div className="flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-1">
-          <motion.h1
-            initial={{ y: 20 }}
-            animate={{ y: 0 }}
-            className="text-5xl font-bold mb-4"
-          >
-            Abdulkadir Iba
-          </motion.h1>
-          <motion.div
-            initial={{ y: 20 }}
-            animate={{ y: 0 }}
-            className="text-xl text-gray-600 dark:text-gray-300 mb-8"
-          >
-            🚀 Web Developer
-          </motion.div>
-          <motion.p
-            initial={{ y: 20 }}
-            animate={{ y: 0 }}
-            className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl"
-          >
-            Hello, I am Abdulkadir, a web software developer and also an
-            electrical and electronic engineer. I have listed some of the work I
-            have done and the technologies I use, if you want to work with me,
-            you can contact me.
-          </motion.p>
-          <ProfileButton />
-        </div>
+      <div className='mx-auto flex max-w-7xl flex-col items-center gap-12 md:flex-row-reverse'>
+        {/* Image Section */}
+        <ProfileImage />
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2 }}
-          className="flex-shrink-0"
-        >
-          <Glow>
-            <div className=" glow:border-green-400 w-64 h-64 rounded-full border-4 overflow-hidden">
-              <img
-                src="https://placehold.co/400x400"
-                alt="Abdulkadir Iba"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Glow>
-        </motion.div>
+        {/* Text Section */}
+        <div className='flex-1 text-center md:text-left'>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className='mb-4 space-y-2'
+          >
+            <span className='bg-gradient-to-r from-emerald-500 via-sky-400 to-primary bg-clip-text text-sm font-medium text-transparent'>
+              Welcome to my portfolio
+            </span>
+            <h1 className='bg-gradient-to-r from-emerald-500 via-sky-400 to-primary bg-clip-text text-4xl font-bold text-transparent sm:text-5xl'>
+              Abdulkadir Iba
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className='mb-8'
+          >
+            <span className='inline-flex items-center rounded-full bg-secondary px-4 py-2 text-lg font-medium text-secondary-foreground'>
+              🚀 Web Developer
+            </span>
+          </motion.div>
+
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className='mb-8 max-w-2xl text-lg leading-relaxed text-muted-foreground'
+          >
+            Hello, I am Abdulkadir, a web software developer and electrical and
+            electronic engineer. I have listed some of the work I have done and
+            the technologies I use. If you want to work with me, you can contact
+            me.
+          </motion.p>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <SocialButtons />
+          </motion.div>
+        </div>
       </div>
     </motion.section>
-  )
+  );
 }
