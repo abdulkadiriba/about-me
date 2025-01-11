@@ -1,9 +1,5 @@
 import { Button } from '@/components/ui/button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
+
 import { cn } from '@/lib/utils';
 import {
   Tooltip,
@@ -11,20 +7,21 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@radix-ui/react-tooltip';
+
 import {
-  Instagram,
-  Github,
-  Linkedin,
-  MessageSquare,
-  MessageCircleMore,
-} from 'lucide-react';
+  FaDiscord,
+  FaWhatsapp,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+} from 'react-icons/fa';
 
 const iconMap = {
-  instagram: Instagram,
-  github: Github,
-  linkedin: Linkedin,
-  discord: MessageSquare,
-  whatsapp: MessageCircleMore,
+  instagram: FaInstagram,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  discord: FaDiscord,
+  whatsapp: FaWhatsapp,
 } as const;
 
 interface SocialButtonProps {
@@ -52,11 +49,11 @@ export function SocialButton({
             variant='outline'
             size='icon'
             className={cn(
-              'rounded-full transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground',
+              'rounded-full transition-all hover:scale-110 hover:bg-primary/80 hover:text-primary-foreground',
               className
             )}
           >
-            <Icon className='h-5 w-5' />
+            <Icon className='size-5' />
           </Button>
         </TooltipTrigger>
 
@@ -65,10 +62,11 @@ export function SocialButton({
           side='top'
         >
           <div className='flex flex-col gap-1'>
-            <p className='text-md font-medium'>{name}</p>
-            {!url && (
-              <p className='text-sm text-muted-foreground'>{description}</p>
-            )}
+            <div className='flex items-center gap-1'>
+              {icon !== null && <Icon className='size-5' />}
+              <p className='text-md font-medium'>{name}</p>
+            </div>
+            <p className='text-sm text-muted-foreground'>{description}</p>
           </div>
         </TooltipContent>
       </Tooltip>

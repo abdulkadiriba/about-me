@@ -1,21 +1,21 @@
 export const profiles = [
   {
-    name: '+90 541 201 90 97',
+    name: 'Whatsapp',
     url: 'https://wa.me/905412019097',
     icon: 'whatsapp',
-    description: '/abdulkadiriba',
+    description: '+90 541 201 90 97',
   },
   {
     name: 'Github',
     url: 'https://github.com/abdulkadiriba',
     icon: 'github',
-    description: '/abdulkadiriba',
+    description: 'abdulkadiriba',
   },
   {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/abdulkadiriba/',
     icon: 'linkedin',
-    description: '/abdulkadiriba',
+    description: 'abdulkadiriba',
   },
   {
     name: 'Discord',
@@ -27,6 +27,6 @@ export const profiles = [
     name: 'Instagram',
     url: 'https://www.instagram.com/abdulkadir.iba/',
     icon: 'instagram',
-    description: '/abdulkadiriba',
+    description: 'abdulkadir.iba',
   },
 ] as const;

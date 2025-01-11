@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { Glow } from '@codaworks/react-glow';
 import GitHubCalendar from 'react-github-calendar';
@@ -6,11 +7,11 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from './ui/card';
 import { Github } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function GithubCommit() {
   const selectLastHalfYear = (contributions: any) => {
@@ -45,11 +46,17 @@ export function GithubCommit() {
             </Link>
           </CardDescription>
         </CardHeader>
-        <CardContent className='max-sm:max-w-xs'>
-          <GitHubCalendar
-            username='abdulkadiriba'
-            transformData={selectLastHalfYear}
-          />
+        <CardContent className='overflow-hidden max-sm:max-w-xs'>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
+            <GitHubCalendar
+              transformTotalCount
+              username='abdulkadiriba'
+              transformData={selectLastHalfYear}
+            />
+          </motion.div>
         </CardContent>
       </Card>
     </Glow>

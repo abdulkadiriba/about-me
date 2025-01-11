@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Glow, GlowCapture } from '@codaworks/react-glow';
+import Image from 'next/image';
 
 export function ProfileImage() {
   return (
@@ -26,9 +26,9 @@ export function ProfileImage() {
           <div className='relative h-full w-full overflow-hidden rounded-full'>
             <div className='group overflow-hidden rounded-full'>
               <img
-                src='/img/profile2.jpg'
+                src='/img/profile.jpeg'
                 alt='Abdulkadir Iba'
-                className='object-cover'
+                className='size-32 object-cover md:size-60'
               />
             </div>
           </div>

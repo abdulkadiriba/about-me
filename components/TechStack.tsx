@@ -1,22 +1,19 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { technologies } from '@/data/technologies';
 import { motion } from 'framer-motion';
 
-import { Icons } from './Icons';
 import { TechCard } from './TechCard';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from './ui/card';
-import { CodeXml, Frame } from 'lucide-react';
-import { Glow, GlowCapture } from '@codaworks/react-glow';
+import { CodeXml } from 'lucide-react';
+import { Glow } from '@codaworks/react-glow';
 
 export const TechStack = () => {
   return (

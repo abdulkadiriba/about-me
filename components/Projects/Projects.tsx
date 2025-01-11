@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 import { Button } from '../ui/button';
 import ProjectCard from './ProjectCard';
+import Link from 'next/link';
 
 export const Projects = () => {
   return (
@@ -24,9 +25,12 @@ export const Projects = () => {
               <ProjectCard key={project.url} index={index} project={project} />
             ))}
           </div>
-          <div className='absolute bottom-0 flex h-64 w-full items-center justify-center bg-gradient-to-t from-background/90 via-background/80 to-transparent'>
+          <Link
+            href='/projects'
+            className='absolute bottom-0 flex h-64 w-full items-center justify-center bg-gradient-to-t from-background/90 via-background/80 to-transparent'
+          >
             <Button variant='outline'>Show All Projects</Button>
-          </div>
+          </Link>
         </div>
       </div>
     </motion.section>

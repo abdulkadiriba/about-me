@@ -1,137 +1,139 @@
 export interface Project {
   url: string;
+  title: string;
   description: string;
   image: string;
-  icons: string[];
+  technologies: string[];
 }
+export interface Technology {
+  name: string;
+  icon: string;
+}
+
+export const technologyList: Technology[] = [
+  { name: 'TypeScript', icon: '/img/technologies/typescript.svg' },
+  { name: 'Vue.js', icon: '/img/technologies/vuejs.svg' },
+  { name: 'Nuxt.js', icon: '/img/technologies/nuxtjs.svg' },
+  { name: 'Tailwind', icon: '/img/technologies/tailwind.svg' },
+  { name: 'SASS', icon: '/img/technologies/sass.svg' },
+  { name: 'Node.js', icon: '/img/technologies/nodejs.svg' },
+  { name: 'JavaScript', icon: '/img/technologies/javascript.svg' },
+  { name: 'Bootstrap', icon: '/img/technologies/bootstrap.png' },
+  { name: 'PHP', icon: '/img/technologies/php.svg' },
+];
 
 export const projects: Project[] = [
   {
     url: 'odinboost.com',
+    title: 'Odin Boost',
     description:
-      'Service shop for online games such as league of legends, valorant, teamfight tactics and wild rift.',
+      'An online service shop for games like League of Legends, Valorant, Teamfight Tactics, and Wild Rift.',
     image: '/img/projects/odinboost.webp',
-    icons: [
-      '/img/technologies/typescript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/tailwind.svg',
-      '/img/technologies/sass.svg',
-      '/img/technologies/nodejs.svg',
-    ],
-  },
-  {
-    url: 'gamemarket24.com',
-    description: 'Account trading store for league of legends',
-    image: '/img/projects/gamemarket24-v2.png',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/php.svg',
-      '/img/technologies/tailwind.svg',
-    ],
-  },
-  {
-    url: 'megaeloboost.com',
-    description:
-      'Service shop for online games such as league of legends, valorant, teamfight tactics and wild rift.',
-    image: '/img/projects/mega.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/bootstrap.png',
-      '/img/technologies/nodejs.svg',
-    ],
-  },
-  {
-    url: 'moriaeloboost.com',
-    description:
-      'Service shop for online games such as league of legends, valorant, teamfight tactics and wild rift.',
-    image: '/img/projects/moria.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/bootstrap.png',
-      '/img/technologies/nodejs.svg',
-    ],
-  },
-  {
-    url: 'unrankedhesap.com',
-    description: 'Unranked account store for league of legends',
-    image: '/img/projects/unrankedhesap.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/tailwind.svg',
-      '/img/technologies/php.svg',
-    ],
-  },
-  {
-    url: 'teknarteknoloji.com',
-    description:
-      'Teknar Teknoloji has been developing solutions for the public transportation network systems since 2012, the year of establishment.',
-    image: '/img/projects/teknarteknoloji.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/bootstrap.png',
-    ],
-  },
-  {
-    url: 'hphamami.com',
-    description:
-      'Historical Hasan Pasha Soldier Bath Museum, which is a museum in Trabzon',
-    image: '/img/projects/hphamami.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/tailwind.svg',
-    ],
-  },
-  {
-    url: 'dkaregroup.com',
-    description:
-      'DKare Group produces doors, kitchens and bathrooms and is a registered company preferred in important projects of the region.',
-    image: '/img/projects/dkaregroup.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/bootstrap.png',
-    ],
-  },
-  {
-    url: 'dtsolar.net',
-    description:
-      'It has been serving for years for the sale and installation of solar panels to homes, workplaces or wherever desired.',
-    image: '/img/projects/dtsolar.webp',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/vuejs.svg',
-      '/img/technologies/bootstrap.png',
-    ],
-  },
-  {
-    url: 'bmwtrabzonmekanik.com',
-    description:
-      'A business offering professional mechanical repair services for BMW and MINI vehicles in Trabzon.',
-    image: '/img/projects/mpowermekanik.png',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/tailwind.svg',
+    technologies: [
+      'TypeScript',
+      'Vue.js',
+      'Nuxt.js',
+      'Tailwind',
+      'SASS',
+      'Node.js',
     ],
   },
   {
     url: 'deryapi.com',
-    description: 'A company serving in the construction industry',
-    image: '/img/projects/deryapi.png',
-    icons: [
-      '/img/technologies/javascript.svg',
-      '/img/technologies/nuxtjs.svg',
-      '/img/technologies/tailwind.svg',
-    ],
+    title: 'Der Yapı',
+    description: 'A company providing services in the construction industry.',
+    image: '/img/projects/deryapi.webp',
+    technologies: ['JavaScript', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'gamemarket24.com',
+    title: 'Game Market 24',
+    description: 'A store for trading League of Legends accounts.',
+    image: '/img/projects/gamemarket24-v2.webp',
+    technologies: ['JavaScript', 'Vue.js', 'PHP', 'Tailwind'],
+  },
+  {
+    url: 'megaeloboost.com',
+    title: 'Mega Elo Boost',
+    description:
+      'An online service shop for games like League of Legends, Valorant, and Teamfight Tactics.',
+    image: '/img/projects/mega.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Bootstrap', 'Node.js'],
+  },
+  {
+    url: 'eloboosstkingdom.com',
+    title: 'Elo Boost Kingdom',
+    description:
+      'A service shop for boosting services in games like League of Legends and Valorant.',
+    image: '/img/projects/ebk.webp',
+    technologies: ['PHP', 'Vue.js', 'Bootstrap'],
+  },
+  {
+    url: 'moriaeloboost.com',
+    title: 'Moria Elo Boost',
+    description:
+      'An online service shop for games like League of Legends, Valorant, and Teamfight Tactics.',
+    image: '/img/projects/moria.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Bootstrap', 'Node.js'],
+  },
+  {
+    url: 'hphamami.com',
+    title: 'Hasan Paşa Asker Hamamı Müzesi',
+    description:
+      'A historical museum located in Trabzon showcasing the Hasan Pasha Soldier Bath.',
+    image: '/img/projects/hphamami.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Tailwind'],
+  },
+  {
+    url: 'teknarteknoloji.com',
+    title: 'Teknar Teknoloji',
+    description:
+      'A company developing solutions for public transportation network systems since 2012.',
+    image: '/img/projects/teknarteknoloji.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Bootstrap'],
+  },
+  {
+    url: 'dkaregroup.com',
+    title: 'DKare Kapı',
+    description:
+      'A company producing doors, kitchens, and bathrooms for regional projects.',
+    image: '/img/projects/dkaregroup.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Bootstrap'],
+  },
+  {
+    url: 'dtsolar.net',
+    title: 'DT Solar',
+    description:
+      'A company offering solar panel sales and installation for homes and businesses.',
+    image: '/img/projects/dtsolar.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Bootstrap'],
+  },
+  {
+    url: 'bmwtrabzonmekanik.com',
+    title: 'MPower Mekanik',
+    description:
+      'A professional mechanical repair service for BMW and MINI vehicles in Trabzon.',
+    image: '/img/projects/mpowermekanik.webp',
+    technologies: ['JavaScript', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'unrankedhesap.com',
+    title: 'Unranked Hesap',
+    description: 'A store for buying unranked accounts for League of Legends.',
+    image: '/img/projects/unrankedhesap.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Tailwind', 'PHP'],
   },
 ];
+
+export const getIconsWithNames = (
+  technologies: string[]
+): { name: string; icon: string }[] => {
+  return technologies
+    .map((tech) => {
+      const technology = technologyList.find((item) => item.name === tech);
+      return technology
+        ? { name: technology.name, icon: technology.icon }
+        : null;
+    })
+    .filter((item) => item !== null) as { name: string; icon: string }[];
+};

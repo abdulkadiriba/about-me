@@ -5,13 +5,12 @@ import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/Layout/ThemeProvider';
-import { MouseShine } from '@/components/MouseShine';
 import { Navbar } from '@/components/Layout/Navbar';
-import { MobileNav } from '@/components/Layout/MobileNav';
-import { GlowCapture } from '@codaworks/react-glow';
-import { Inter } from 'next/font/google';
 
-const inter = Inter({
+import { Outfit } from 'next/font/google';
+import { MobileNav } from '@/components/Layout/MobileNav';
+
+const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
 });
@@ -22,10 +21,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -46,13 +42,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
           className={cn(
             'min-h-screen bg-background antialiased',
             fontSans.variable,
-            inter.className
+            outfit.className
           )}
         >
           <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
-            <div className='relative flex min-h-screen flex-col'>
-              <MouseShine />
-              <Navbar />
+            <Navbar />
+            <MobileNav />
+
+            <div className='relative mx-auto flex min-h-screen max-w-5xl flex-col px-4'>
+              {/* <MouseShine /> */}
               <div className='flex-1'>{children}</div>
             </div>
           </ThemeProvider>

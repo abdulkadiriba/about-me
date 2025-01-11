@@ -6,17 +6,6 @@ import { SocialButtons } from './Buttons/SocialButtons';
 import { ProfileImage } from './ProfileImage';
 
 export default function Hero() {
-  // useEffect(() => {
-  //     fetch(
-  //       "https://discord.com/api/webhooks/1171087359975096473/-7_yM5526PopCdWD6uk-Wv7StP39NaoYDyzKLDnr_xkJq6kaSHT99ijmf69fPLhZ5gy6",
-  //       {
-  //         method: "POST",
-  //         headers: { "Content-Type": "application/json" },
-  //         body: JSON.stringify({ content: "Bildirim!" }),
-  //       }
-  //     );
-
-  // }, [])
   return (
     <motion.section
       initial={{ opacity: 0 }}
