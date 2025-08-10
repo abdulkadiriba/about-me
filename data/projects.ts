@@ -24,6 +24,55 @@ export const technologyList: Technology[] = [
 
 export const projects: Project[] = [
   {
+    url: 'antalyayapidenetim.com',
+    title: 'Antalya Yapı Denetim',
+    description:
+      'A company based in Antalya providing building inspection services. It offers consultancy and inspection to ensure safety and quality in construction projects.',
+    image: '/img/projects/antalyayapidenetim.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'maranhousemardin.com',
+    title: 'Maran House Mardin',
+    description:
+      'A hotel located in Mardin, offering comfortable accommodation and hospitality services. It provides guests with an unforgettable experience blending modern and traditional touches.',
+    image: '/img/projects/maranhousemardin.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'mmrvalorant.com',
+    title: 'MMR Valorant',
+    description:
+      'A platform that provides MMR (Matchmaking Rating) calculation and statistics for Valorant players. Users can analyze their game performance and track their progress.',
+    image: '/img/projects/mmrvalorant.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'valorantvalue.com',
+    title: 'Valorant Value',
+    description:
+      'A website offering account valuation, skin prices, and in-game economy analysis for Valorant. Players can easily learn the value of their accounts.',
+    image: '/img/projects/valorantvalue.png',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'turzem.com',
+    title: 'Turzem Tur',
+    description:
+      'A company operating in tourism and travel, offering various tour packages and organizations. It arranges domestic and international tours for its customers.',
+    image: '/img/projects/turzem.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+  {
+    url: 'tucasagelidonyahotel.com',
+    title: 'Tucasa Gelidonya',
+    description:
+      'A seaside hotel in Antalya providing accommodation and holiday services. It offers guests a peaceful and enjoyable vacation experience.',
+    image: '/img/projects/tucasagelidonya.webp',
+    technologies: ['JavaScript', 'Vue.js', 'Nuxt.js', 'Tailwind'],
+  },
+
+  {
     url: 'odinboost.com',
     title: 'Odin Boost',
     description:
